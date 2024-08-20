@@ -1,8 +1,7 @@
 export interface Product {
-  id: string;
+  no: number;
   name: string;
   description: string;
-  images: string[];
 }
 
 export interface Category {
@@ -11,21 +10,17 @@ export interface Category {
   thumbnailUrl: string;
   products: Product[];
 }
+
 export const portfolioData: Category[] = [
   {
     id: 'acrylic-box',
     name: '아크릴 상자',
-    thumbnailUrl: '/images/categories/acrylic-box-thumbnail.jpg',
+    thumbnailUrl: '/images/portfolio/acrylic-box/thumbnail.png',
     products: [
       {
-        id: 'transparent-organizer',
+        no: 1,
         name: '투명 정리 박스',
         description: '투명 정리 박스에 대한 자세한 설명입니다.',
-        images: [
-          '/images/portfolio/acrylic-box-1-1.jpg',
-          '/images/portfolio/acrylic-box-1-2.jpg',
-          '/images/portfolio/acrylic-box-1-3.jpg',
-        ],
       },
       // ... 다른 제품들 ...
     ],
@@ -33,7 +28,7 @@ export const portfolioData: Category[] = [
   {
     id: 'acrylic-door-handle',
     name: '아크릴 문손잡이',
-    thumbnailUrl: '/images/categories/acrylic-door-handle-thumbnail.jpg',
+    thumbnailUrl: '/images/portfolio/acrylic-door-handle/thumbnail.png',
     products: [
       // ... 아크릴 문손잡이 제품들 ...
     ],
@@ -41,7 +36,7 @@ export const portfolioData: Category[] = [
   {
     id: 'business-product',
     name: '사업화 제품',
-    thumbnailUrl: '/images/categories/business-product-thumbnail.jpg',
+    thumbnailUrl: '/images/portfolio/business-product/thumbnail.png',
     products: [
       // ... 사업화 제품들 ...
     ],
@@ -53,10 +48,10 @@ export function getCategoryById(id: string): Category | undefined {
   return portfolioData.find((category) => category.id === id);
 }
 
-export function getProductById(
+export function getProductByNo(
   categoryId: string,
-  productId: string
+  productNo: number
 ): Product | undefined {
   const category = getCategoryById(categoryId);
-  return category?.products.find((product) => product.id === productId);
+  return category?.products.find((product) => product.no === productNo);
 }
