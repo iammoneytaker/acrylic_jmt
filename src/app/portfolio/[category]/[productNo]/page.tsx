@@ -1,8 +1,9 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { Metadata } from 'next';
-import { getProductByNo } from '../../data';
+import { getCategoryNameById, getProductByNo } from '../../data';
 import { SkeletonProductDetail } from '../../Skeleton';
+import { IoIosArrowBack } from 'react-icons/io';
 
 export async function generateMetadata({
   params,
@@ -27,6 +28,7 @@ export default function PortfolioItem({
   params: { category: string; productNo: string };
 }) {
   const product = getProductByNo(params.category, parseInt(params.productNo));
+  const categoryName = getCategoryNameById(params.category);
 
   if (!product) {
     return (
@@ -58,14 +60,19 @@ export default function PortfolioItem({
             {product.name}
           </h1>
 
+          <Link
+            href={`/portfolio/${params.category}`}
+            className="flex items-center mb-8 text-brand"
+          >
+            <IoIosArrowBack className="text-2xl mr-2" />
+            <span>{categoryName} 카테고리로 돌아가기</span>
+          </Link>
+
           <div className="mb-8">
             {/* 이미지 캐러셀 */}
             <div className="relative">
               {imagePaths.map((image, index) => (
-                <div
-                  key={image}
-                  className={`${index === 0 ? 'block' : 'hidden'}`}
-                >
+                <div key={image}>
                   <Image
                     src={image}
                     alt={product.name}
@@ -79,10 +86,6 @@ export default function PortfolioItem({
           </div>
 
           <p className="text-lg mb-8">{product.description}</p>
-
-          <Link href={`/portfolio/${params.category}`} className="text-brand">
-            {params.category} 카테고리로 돌아가기
-          </Link>
         </>
       ) : (
         <SkeletonProductDetail />

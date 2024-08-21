@@ -5,7 +5,7 @@ import { portfolioData } from './data';
 import { SkeletonCategoryCard } from './Skeleton';
 
 export const metadata: Metadata = {
-  title: '포트폴리오 | 아크릴 맛집',
+  title: '포트폴리오',
   description:
     '아크릴 맛집의 아크릴 주문제작에 대한 다양한 포트폴리오를 확인해 보세요.',
 };
@@ -14,10 +14,10 @@ export default function PortfolioMain() {
   return (
     <main className="container mx-auto py-12">
       <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8">
-        포트폴리오
+        아크릴 주문제작 포트폴리오
       </h1>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
         {portfolioData.length === 0
           ? Array.from({ length: 6 }).map((_, index) => (
               <SkeletonCategoryCard key={index} />
@@ -29,8 +29,8 @@ export default function PortfolioMain() {
                     src={category.thumbnailUrl}
                     alt={category.name}
                     width={300}
-                    height={200}
-                    className="w-full h-40 object-cover mb-4 rounded"
+                    height={300}
+                    className="w-full h-56 object-cover mb-4 rounded"
                   />
                   <h2 className="text-xl font-bold mb-2">{category.name}</h2>
                 </div>

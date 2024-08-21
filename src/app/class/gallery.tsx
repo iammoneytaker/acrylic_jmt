@@ -9,18 +9,18 @@ interface ClassImage {
 }
 
 const classImages: ClassImage[] = [
-  { src: '/images/class1.jpg', alt: '아크릴 클래스 진행 모습 1' },
-  { src: '/images/class2.jpg', alt: '아크릴 클래스 진행 모습 2' },
-  { src: '/images/class3.jpg', alt: '아크릴 클래스 진행 모습 3' },
-  { src: '/images/class4.jpg', alt: '아크릴 클래스 진행 모습 4' },
-  { src: '/images/class5.jpg', alt: '아크릴 클래스 진행 모습 5' },
-  { src: '/images/class6.jpg', alt: '아크릴 클래스 진행 모습 6' },
-  { src: '/images/class1.jpg', alt: '아크릴 클래스 진행 모습 1' },
-  { src: '/images/class2.jpg', alt: '아크릴 클래스 진행 모습 2' },
-  { src: '/images/class3.jpg', alt: '아크릴 클래스 진행 모습 3' },
-  { src: '/images/class4.jpg', alt: '아크릴 클래스 진행 모습 4' },
-  { src: '/images/class5.jpg', alt: '아크릴 클래스 진행 모습 5' },
-  { src: '/images/class6.jpg', alt: '아크릴 클래스 진행 모습 6' },
+  { src: '/images/class/1.png', alt: '아크릴 클래스 진행 모습 1' },
+  { src: '/images/class/2.png', alt: '아크릴 클래스 진행 모습 2' },
+  { src: '/images/class/3.png', alt: '아크릴 클래스 진행 모습 3' },
+  { src: '/images/class/4.png', alt: '아크릴 클래스 진행 모습 4' },
+  { src: '/images/class/5.png', alt: '아크릴 클래스 진행 모습 5' },
+  { src: '/images/class/6.png', alt: '아크릴 클래스 진행 모습 6' },
+  { src: '/images/class/7.png', alt: '아크릴 클래스 진행 모습 7' },
+  { src: '/images/class/8.png', alt: '아크릴 클래스 진행 모습 8' },
+  { src: '/images/class/9.png', alt: '아크릴 클래스 진행 모습 9' },
+  { src: '/images/class/10.png', alt: '아크릴 클래스 진행 모습 10' },
+  { src: '/images/class/11.png', alt: '아크릴 클래스 진행 모습 11' },
+  { src: '/images/class/12.png', alt: '아크릴 클래스 진행 모습 12' },
   // 추가 이미지들...
 ];
 
@@ -95,10 +95,10 @@ const ClassGallery: React.FC = () => {
               />
             ) : null}
             <div
-              className={`absolute inset-0 flex items-center justify-center text-gray-600 text-center p-2 ${
+              className={`absolute inset-0 flex items-center justify-center text-white text-center p-2 ${
                 imageLoadError[index + currentPage * IMAGES_PER_PAGE]
                   ? 'bg-gray-200'
-                  : 'bg-white bg-opacity-75'
+                  : 'bg-black bg-opacity-50'
               }`}
             >
               {img.alt}

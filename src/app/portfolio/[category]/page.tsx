@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { getCategoryById } from '../data';
 import { SkeletonProductCard } from '../Skeleton';
+import { IoIosArrowBack } from 'react-icons/io';
 
 export async function generateMetadata({
   params,
@@ -38,18 +39,25 @@ export default function PortfolioCategory({
     );
   }
 
+  // 최신순으로 제품 정렬
+  const sortedProducts = [...category.products].sort((a, b) => b.no - a.no);
+
   return (
     <main className="container mx-auto py-12">
+      <Link href="/portfolio" className="flex items-center mb-8 text-brand">
+        <IoIosArrowBack className="text-2xl mr-2 text-brand" />
+        <span>포트폴리오로 돌아가기</span>
+      </Link>
       <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8">
         {category.name}
       </h1>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {category.products.length === 0
+        {sortedProducts.length === 0
           ? Array.from({ length: 6 }).map((_, index) => (
               <SkeletonProductCard key={index} />
             ))
-          : category.products.map((product) => (
+          : sortedProducts.map((product) => (
               <Link
                 key={product.no}
                 href={`/portfolio/${category.id}/${product.no}`}

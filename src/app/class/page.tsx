@@ -14,7 +14,9 @@ export default function ACLClassPage() {
   return (
     <div className="bg-white">
       <header className="bg-brand text-white py-20 text-center">
-        <h1 className="text-4xl md:text-5xl font-bold mb-4">아클 클래스</h1>
+        <h1 className="text-4xl md:text-5xl font-bold mb-4">
+          아클(아크릴 클래스)
+        </h1>
         <p className="text-xl md:text-2xl">
           3주간의 일정 후, 인생에서 아크릴을 몰라서 손해보는 일은 없을겁니다.
         </p>
@@ -22,15 +24,15 @@ export default function ACLClassPage() {
 
       <main className="container mx-auto px-4 py-12">
         <section className="mb-16">
-          <h2 className="text-3xl font-bold mb-6">아클 클래스란?</h2>
+          <h2 className="text-3xl font-bold mb-6">아클이란?</h2>
           <p className="text-lg mb-4">
-            '아클'은 토요일을 이용하여 직접 공장에서 실습을 하면서 재단부터
-            가공, 커팅, 절곡 등에 대한 기본기를 쌓아가는 클래스입니다. 3주간의
-            일정을 소화한 뒤, 여러분들은 인생에서 아크릴을 몰라서 손해보는 일은
-            없게 될 것입니다.
+            '아클'은 주말을 이용하여 직접 공장에서 실습을 하면서 재단부터 가공,
+            커팅, 절곡 등에 대한 기본기를 쌓아가는 클래스입니다. 3주간의 일정을
+            소화한 뒤, 여러분들은 인생에서 아크릴을 몰라서 손해보는 일은 없게 될
+            것입니다.
           </p>
           <Image
-            src="/images/acl-class-intro.jpg"
+            src="/images/class/intro.png"
             alt="아클 클래스 소개"
             width={800}
             height={400}
