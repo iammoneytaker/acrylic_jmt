@@ -46,6 +46,12 @@ export default function Header() {
             <Link href="/about" className="text-gray-700 hover:text-brand">
               About
             </Link>
+            <Link
+              href="/contact"
+              className="block text-gray-700 hover:text-brand"
+            >
+              Contact
+            </Link>
           </div>
           <div className="md:hidden">
             <button
@@ -77,7 +83,13 @@ export default function Header() {
               href="/order"
               className="block text-gray-700 hover:text-brand"
             >
-              Order
+              주문제작 하러가기
+            </Link>
+            <Link
+              href="/class"
+              className="block text-gray-700 hover:text-brand"
+            >
+              아클
             </Link>
             <Link
               href="/contact"
