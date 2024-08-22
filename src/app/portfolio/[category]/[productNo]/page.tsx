@@ -11,14 +11,18 @@ export async function generateMetadata({
   params: { category: string; productNo: string };
 }): Promise<Metadata> {
   const product = getProductByNo(params.category, parseInt(params.productNo));
+  const categoryName = getCategoryNameById(params.category);
 
   return {
     title: product
-      ? `${product.name} | 아크릴 맛집`
+      ? `${product.name} | ${categoryName} | 아크릴 맛집 포트폴리오`
       : '제품을 찾을 수 없습니다',
     description: product
-      ? product.description
+      ? `아크릴 맛집의 ${categoryName} 카테고리에 속한 ${product.name} 제품입니다. ${product.description}`
       : '요청하신 제품을 찾을 수 없습니다.',
+    keywords: product
+      ? `${product.name},${categoryName},아크릴${categoryName},${product.name}제작사례,아크릴맛집${categoryName}`
+      : '',
   };
 }
 

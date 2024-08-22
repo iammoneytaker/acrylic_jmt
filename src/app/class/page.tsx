@@ -8,6 +8,8 @@ export const metadata: Metadata = {
   title: '아클(아크릴 클래스)',
   description:
     '아크릴 클래스, 아크릴맛집 대표가 직접 진행하는 아크릴 제조에 대한 강의, 3주의 시간이 지난 뒤 여러분들이 아크릴을 몰라서 손해보는 일은 없을겁니다.',
+  keywords:
+    '아크릴클래스,아크릴강의,아크릴교육,아크릴수업,아크릴배우기,아크릴전문가,아크릴기술, 아크릴제조강의',
 };
 
 export default function ACLClassPage() {

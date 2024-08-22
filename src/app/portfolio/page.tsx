@@ -8,6 +8,8 @@ export const metadata: Metadata = {
   title: '포트폴리오',
   description:
     '아크릴 맛집의 아크릴 주문제작에 대한 다양한 포트폴리오를 확인해 보세요.',
+  keywords:
+    '아크릴포트폴리오,아크릴제작사례,아크릴주문제작,아크릴제품,아크릴갤러리,아크릴주문제작사례',
 };
 
 export default function PortfolioMain() {

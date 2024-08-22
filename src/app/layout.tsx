@@ -13,6 +13,35 @@ export const metadata: Metadata = {
   },
   description:
     '아크릴을 맛있게 주문제작 해드립니다. 간판, 인테리어 소품, 아크릴 굿즈, 문손잡이, 아크릴박스 등 다양한 아크릴 제품을 만나보세요.',
+  keywords:
+    '아크릴맛집,아크릴주문제작,아크릴제품,아크릴간판,아크릴인테리어,아크릴굿즈,아크릴문손잡이,아크릴박스',
+  openGraph: {
+    title: '아크릴맛집 - 아크릴 주문제작 전문',
+    description:
+      '아크릴을 맛있게 주문제작 해드립니다. 간판, 인테리어 소품, 아크릴 굿즈, 문손잡이, 아크릴박스 등 다양한 아크릴 제품을 만나보세요.',
+    url: 'https://acrylic-jmt.vercel.app', // TODO: 나중에 도메인 수정 후 변경해야함.
+    siteName: '아크릴맛집',
+    images: [
+      {
+        url: 'https://acrylic-jmt.vercel.app/images/og-image.png',
+        width: 1200,
+        height: 630,
+      },
+    ],
+    locale: 'ko_KR',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: '아크릴맛집 - 아크릴 주문제작 전문',
+    description:
+      '아크릴을 맛있게 주문제작 해드립니다. 간판, 인테리어 소품, 아크릴 굿즈, 문손잡이, 아크릴박스 등 다양한 아크릴 제품을 만나보세요.',
+    creator: '@acrylicjmt',
+    images: ['https://acrylic-jmt.vercel.app/images/og-image.png'],
+  },
+  alternates: {
+    canonical: 'https://acrylic-jmt.vercel.app',
+  },
 };
 
 export default function RootLayout({

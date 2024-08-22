@@ -14,6 +14,8 @@ export const metadata: Metadata = {
   title: '주문제작',
   description:
     '아크릴맛집의 주문제작 과정을 단계별로 안내해드립니다. 견적문의부터 발송까지 확인해보세요.',
+  keywords:
+    '아크릴주문제작,아크릴제작과정,아크릴견적,아크릴상담,아크릴제작단계,아크릴납품, 아크릴주문제작업체, 아크릴재단, 아크릴가공, 아크릴문손잡이, CNC가공업체,포맥스제작, UV인쇄',
 };
 
 export default function OrderPage() {

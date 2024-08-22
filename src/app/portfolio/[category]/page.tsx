@@ -16,6 +16,9 @@ export async function generateMetadata({
     description: category
       ? `아크릴 맛집의 ${category.name} 카테고리 포트폴리오입니다.`
       : '요청하신 카테고리를 찾을 수 없습니다.',
+    keywords: category
+      ? `${category.name},아크릴${category.name},${category.name}포트폴리오,${category.name}제작사례,아크릴맛집${category.name}`
+      : '',
   };
 }
 

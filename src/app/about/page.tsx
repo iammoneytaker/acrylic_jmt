@@ -1,18 +1,16 @@
-'use client';
-
 import Image from 'next/image';
 import Link from 'next/link';
 import { FaComments, FaPencilRuler, FaUserTie } from 'react-icons/fa';
-import dynamic from 'next/dynamic';
+import { Metadata } from 'next';
+import { MotionDiv, MotionH2 } from './textanimation';
 
-const MotionDiv = dynamic(
-  () => import('framer-motion').then((mod) => mod.motion.div),
-  { ssr: false }
-);
-const MotionH2 = dynamic(
-  () => import('framer-motion').then((mod) => mod.motion.h2),
-  { ssr: false }
-);
+export const metadata: Metadata = {
+  title: '아크릴맛집 소개',
+  description:
+    '아크릴맛집은 을지로 제조업계에서 아크릴 제조의 명맥을 이어나가는 업체입니다. 20-30대로 구성된 젊은 감각과 풍부한 경험으로 최고의 제품을 제공합니다.',
+  keywords:
+    '아크릴맛집,아크릴제작,아크릴제조,을지로,제조업,아크릴업체,아크릴회사,아크릴주문제작,포맥스,PC,폴리카보네이트',
+};
 
 export default function AboutPage() {
   return (

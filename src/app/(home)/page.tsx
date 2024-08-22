@@ -7,18 +7,11 @@ import ReviewGallery from './review';
 
 export const metadata: Metadata = {
   title: 'HOME',
+  description:
+    '아크릴을 맛있게 주문제작 해드립니다. 간판, 인테리어 소품, 아크릴 굿즈, 문손잡이, 아크릴박스, 금형 사출, UV인쇄, 아크릴 거울 등 다양한 아크릴 제품을 만나보세요.',
+  keywords:
+    '아크릴맛집,아크릴주문제작,아크릴제품,아크릴간판,아크릴인테리어,아크릴굿즈,아크릴문손잡이,아크릴박스, 아크릴거울, UV인쇄, 아크릴거울제작, 아크릴제작',
 };
-
-const images = [
-  '/images/home/slider/1.png',
-  '/images/home/slider/2.png',
-  '/images/home/slider/3.png',
-  '/images/home/slider/4.png',
-  '/images/home/slider/5.png',
-  '/images/home/slider/6.png',
-  '/images/home/slider/7.png',
-  '/images/home/slider/8.png',
-];
 
 export default function Home() {
   return (
@@ -49,7 +42,7 @@ export default function Home() {
       {/* 주요 서비스/제품 하이라이트 섹션 */}
       <section className="py-16">
         <h2 className="text-3xl font-bold mb-8 text-brand">우리의 서비스</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
             <Image
               src="/images/home/service/1.png"
@@ -131,6 +124,78 @@ export default function Home() {
             <p className="text-gray-600 mb-4">
               열을 가해 아크릴을 원하는 각도로 구부립니다. 입체적인 디자인과
               구조물 제작에 필수적인 과정입니다.
+            </p>
+          </div>
+          <div>
+            <Image
+              src="/images/home/service/7.png"
+              alt="UV 인쇄"
+              width={500}
+              height={300}
+              className="w-full h-48 object-cover mb-4 rounded-lg"
+            />
+            <h3 className="text-xl font-bold mb-2">UV 인쇄</h3>
+            <p className="text-gray-600 mb-4">
+              자외선 인쇄로 불리는 UV 인쇄는 자외선램프에서 쏘는 빛으로 전용
+              잉크를 이용해서 건조를 빠르게 해서 인쇄하는 방식입니다. 특징으로는
+              인쇄 후에 뒤 묻음 현상이 없어서 좋습니다.
+            </p>
+          </div>
+          <div>
+            <Image
+              src="/images/home/service/8.png"
+              alt="PC(폴리카보네이트) 제작"
+              width={500}
+              height={300}
+              className="w-full h-48 object-cover mb-4 rounded-lg"
+            />
+            <h3 className="text-xl font-bold mb-2">PC(폴리카보네이트) 제작</h3>
+            <p className="text-gray-600 mb-4">
+              내충격성과 내열성이 뛰어난 폴리카보네이트를 사용하여 제품을
+              제작합니다. 튼튼한 것을 원할 때 사용할 수 있으며 외장재로도 쓰이곤
+              합니다.
+            </p>
+          </div>
+          <div>
+            <Image
+              src="/images/home/service/9.png"
+              alt="아크릴 거울"
+              width={500}
+              height={300}
+              className="w-full h-48 object-cover mb-4 rounded-lg"
+            />
+            <h3 className="text-xl font-bold mb-2">아크릴 거울</h3>
+            <p className="text-gray-600 mb-4">
+              아크릴 거울로 다양한 모양을 만들 수 있으어 인테리어 용도로 자주
+              쓰이곤 합니다. 크기가 커지면 왜곡이 생기곤 합니다.
+            </p>
+          </div>
+          <div>
+            <Image
+              src="/images/home/service/10.png"
+              alt="포맥스"
+              width={500}
+              height={300}
+              className="w-full h-48 object-cover mb-4 rounded-lg"
+            />
+            <h3 className="text-xl font-bold mb-2">포맥스</h3>
+            <p className="text-gray-600 mb-4">
+              상대적으로 저렴한 포맥스를 사용하여 가벼우면서도 강도 높은 제품을
+              제작합니다. 간판 및 전시 부스 등에 활용됩니다.
+            </p>
+          </div>
+          <div>
+            <Image
+              src="/images/home/service/11.png"
+              alt="사출-금형"
+              width={500}
+              height={300}
+              className="w-full h-48 object-cover mb-4 rounded-lg"
+            />
+            <h3 className="text-xl font-bold mb-2">사출-금형</h3>
+            <p className="text-gray-600 mb-4">
+              금형을 제작하고 사출 성형을 통해 대량 생산이 가능한 플라스틱
+              제품을 제작합니다. 정밀하고 복잡한 형상도 가능합니다.
             </p>
           </div>
         </div>
@@ -245,7 +310,7 @@ export default function Home() {
               href="/contact"
               className="bg-white text-brand px-8 py-3 rounded-full text-lg"
             >
-              문의하기
+              협업 문의하기
             </Link>
           </div>
         </div>
