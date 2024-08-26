@@ -152,3 +152,12 @@ export function getProductByNo(
   const category = getCategoryById(categoryId);
   return category?.products.find((product) => product.no === productNo);
 }
+
+export function getCategories(): Category[] {
+  return portfolioData;
+}
+
+export function getProducts(categoryId: string): Product[] {
+  const category = getCategoryById(categoryId);
+  return category ? category.products : [];
+}

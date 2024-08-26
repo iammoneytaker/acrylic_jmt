@@ -1,11 +1,51 @@
-'use client';
-import Image from 'next/image';
-import Link from 'next/link';
 import { Metadata } from 'next';
-import { getCategoryNameById, getProductByNo } from '../../data';
-import { SkeletonProductDetail } from '../../Skeleton';
-import { IoIosArrowBack } from 'react-icons/io';
-import { useState, useEffect } from 'react';
+import {
+  getCategoryNameById,
+  getProductByNo,
+  getCategories,
+  getProducts,
+} from '../../data';
+import PortfolioItemClient from './PortfolioItemClient';
+import fs from 'fs/promises';
+import path from 'path';
+
+export async function generateStaticParams() {
+  const categories = getCategories();
+  const params = [];
+
+  for (const category of categories) {
+    const products = getProducts(category.id);
+    for (const product of products) {
+      params.push({ category: category.id, productNo: product.no.toString() });
+    }
+  }
+
+  return params;
+}
+
+async function getExistingImagePaths(category: string, productNo: string) {
+  const basePath = path.join(
+    process.cwd(),
+    'public',
+    'images',
+    'portfolio',
+    category,
+    productNo
+  );
+  const imagePaths = [];
+
+  for (let i = 1; i <= 10; i++) {
+    const imagePath = `/images/portfolio/${category}/${productNo}/${i}.png`;
+    try {
+      await fs.access(path.join(process.cwd(), 'public', imagePath));
+      imagePaths.push(imagePath);
+    } catch (error) {
+      // 파일이 존재하지 않으면 무시
+    }
+  }
+
+  return imagePaths;
+}
 
 export async function generateMetadata({
   params,
@@ -28,91 +68,24 @@ export async function generateMetadata({
   };
 }
 
-export default function PortfolioItem({
+export default async function PortfolioItem({
   params,
 }: {
   params: { category: string; productNo: string };
 }) {
   const product = getProductByNo(params.category, parseInt(params.productNo));
   const categoryName = getCategoryNameById(params.category);
-  const [imagePaths, setImagePaths] = useState<string[]>([]);
-
-  useEffect(() => {
-    if (product) {
-      const loadImages = async () => {
-        const paths = [];
-        for (let i = 1; i <= 10; i++) {
-          // 최대 10개의 이미지를 가정
-          const path = `/images/portfolio/${params.category}/${product.no}/${i}.png`;
-          try {
-            // 이미지 존재 여부 확인
-            await fetch(path, { method: 'HEAD' });
-            paths.push(path);
-          } catch (error) {
-            // 이미지가 없으면 중단
-            break;
-          }
-        }
-        setImagePaths(paths);
-      };
-      loadImages();
-    }
-  }, [product, params.category]);
-
-  if (!product) {
-    return (
-      <div className="container mx-auto py-12">
-        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8">
-          제품을 찾을 수 없습니다
-        </h1>
-        <p className="text-lg mb-8">
-          요청하신 포트폴리오 아이템을 찾을 수 없습니다.
-        </p>
-        <Link href="/portfolio" className="text-brand">
-          포트폴리오로 돌아가기
-        </Link>
-      </div>
-    );
-  }
+  const imagePaths = await getExistingImagePaths(
+    params.category,
+    params.productNo
+  );
 
   return (
-    <main className="container mx-auto py-12">
-      {product ? (
-        <>
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8">
-            {product.name}
-          </h1>
-
-          <Link
-            href={`/portfolio/${params.category}`}
-            className="flex items-center mb-8 text-brand"
-          >
-            <IoIosArrowBack className="text-2xl mr-2" />
-            <span>{categoryName} 카테고리로 돌아가기</span>
-          </Link>
-
-          <div className="mb-8">
-            {/* 이미지 캐러셀 */}
-            <div className="relative">
-              {imagePaths.map((image, index) => (
-                <div key={image} className="mb-4">
-                  <Image
-                    src={image}
-                    alt={`${product.name} 이미지 ${index + 1}`}
-                    width={1200}
-                    height={800}
-                    className="w-full h-auto rounded"
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <p className="text-lg mb-8">{product.description}</p>
-        </>
-      ) : (
-        <SkeletonProductDetail />
-      )}
-    </main>
+    <PortfolioItemClient
+      product={product}
+      categoryName={categoryName}
+      imagePaths={imagePaths}
+      params={params}
+    />
   );
 }
