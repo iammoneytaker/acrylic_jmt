@@ -1,9 +1,11 @@
+'use client';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Metadata } from 'next';
 import { getCategoryNameById, getProductByNo } from '../../data';
 import { SkeletonProductDetail } from '../../Skeleton';
 import { IoIosArrowBack } from 'react-icons/io';
+import { useState, useEffect } from 'react';
 
 export async function generateMetadata({
   params,
@@ -33,6 +35,29 @@ export default function PortfolioItem({
 }) {
   const product = getProductByNo(params.category, parseInt(params.productNo));
   const categoryName = getCategoryNameById(params.category);
+  const [imagePaths, setImagePaths] = useState<string[]>([]);
+
+  useEffect(() => {
+    if (product) {
+      const loadImages = async () => {
+        const paths = [];
+        for (let i = 1; i <= 10; i++) {
+          // 최대 10개의 이미지를 가정
+          const path = `/images/portfolio/${params.category}/${product.no}/${i}.png`;
+          try {
+            // 이미지 존재 여부 확인
+            await fetch(path, { method: 'HEAD' });
+            paths.push(path);
+          } catch (error) {
+            // 이미지가 없으면 중단
+            break;
+          }
+        }
+        setImagePaths(paths);
+      };
+      loadImages();
+    }
+  }, [product, params.category]);
 
   if (!product) {
     return (
@@ -49,12 +74,6 @@ export default function PortfolioItem({
       </div>
     );
   }
-
-  const imagePaths = [
-    `/images/portfolio/${params.category}/${product.no}/1.png`,
-    `/images/portfolio/${params.category}/${product.no}/2.png`,
-    `/images/portfolio/${params.category}/${product.no}/3.png`,
-  ];
 
   return (
     <main className="container mx-auto py-12">
@@ -76,10 +95,10 @@ export default function PortfolioItem({
             {/* 이미지 캐러셀 */}
             <div className="relative">
               {imagePaths.map((image, index) => (
-                <div key={image}>
+                <div key={image} className="mb-4">
                   <Image
                     src={image}
-                    alt={product.name}
+                    alt={`${product.name} 이미지 ${index + 1}`}
                     width={1200}
                     height={800}
                     className="w-full h-auto rounded"
