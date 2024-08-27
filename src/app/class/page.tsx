@@ -19,7 +19,7 @@ export default function ACLClassPage() {
         <h1 className="text-4xl md:text-5xl font-bold mb-4">
           아클(아크릴 클래스)
         </h1>
-        <p className="text-xl md:text-2xl">
+        <p className="text-xl md:text-2xl px-4">
           3주간의 일정 후, 인생에서 아크릴을 몰라서 손해보는 일은 없을겁니다.
         </p>
       </header>
@@ -27,7 +27,7 @@ export default function ACLClassPage() {
       <main className="container mx-auto px-4 py-12">
         <section className="mb-16">
           <h2 className="text-3xl font-bold mb-6">아클이란?</h2>
-          <p className="text-lg mb-4">
+          <p className="text-lg mb-4 text-justify">
             '아클'은 주말을 이용하여 직접 공장에서 실습을 하면서 재단부터 가공,
             커팅, 절곡 등에 대한 기본기를 쌓아가는 클래스입니다. 3주간의 일정을
             소화한 뒤, 여러분들은 인생에서 아크릴을 몰라서 손해보는 일은 없게 될
@@ -65,17 +65,19 @@ export default function ACLClassPage() {
         </section>
 
         <section className="mb-16">
-          <h2 className="text-3xl font-bold mb-6">수업 일정</h2>
+          <h2 className="text-3xl font-bold mb-6">수업 일정(3기)</h2>
           <div className="bg-gray-100 p-6 rounded-lg">
             <p className="text-lg mb-2">
-              <strong>시작일:</strong> 2023년 8월 10일(토요일)
+              <strong>시작일:</strong> 2024년 9월 21일(토요일)
             </p>
             <p className="text-lg mb-2">
-              <strong>시간:</strong> 토요일 오후 3시 이후 (약 5시간, 3주 총
-              15시간)
+              <strong>시간:</strong> 토요일 오후 3시 (약 5시간, 3주 총 15시간),
+              일요일 오전 10시
             </p>
             <p className="text-lg">
-              <strong>장소:</strong> 아크릴 맛집 스튜디오 (서울시 강남구)
+              <strong>장소:</strong> 을지로아크릴서울스튜디오
+              <br />
+              (을지로 4가역 도보 1분)
             </p>
           </div>
         </section>
@@ -85,7 +87,6 @@ export default function ACLClassPage() {
           <p className="text-lg mb-4">
             <strong>3주 과정:</strong> 499,000원 (재료비 포함)
           </p>
-          <p className="text-lg">※ 아클 1기 탈락자 특별 할인: 390,000원</p>
         </section>
 
         <section className="mb-16">
@@ -100,7 +101,7 @@ export default function ACLClassPage() {
 
         <section className="text-center">
           <Link
-            href="https://forms.gle/your-naver-form-link"
+            href="https://naver.me/xk1qABBG"
             className="bg-brand text-white text-xl font-bold py-4 px-8 rounded-full inline-block hover:bg-opacity-90 transition duration-300"
           >
             수강 신청하기

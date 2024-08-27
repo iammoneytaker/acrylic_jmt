@@ -55,7 +55,7 @@ export default function PortfolioCategory({
         {category.name}
       </h1>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-2 gap-6">
         {sortedProducts.length === 0
           ? Array.from({ length: 6 }).map((_, index) => (
               <SkeletonProductCard key={index} />
@@ -64,18 +64,24 @@ export default function PortfolioCategory({
               <Link
                 key={product.no}
                 href={`/portfolio/${category.id}/${product.no}`}
+                className="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-brand"
               >
-                <div className="bg-white rounded shadow overflow-hidden transition-all duration-300 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-brand">
+                <div className="relative">
                   <Image
                     src={`/images/portfolio/${category.id}/${product.no}/thumbnail.png`}
                     alt={product.name}
                     width={500}
                     height={500}
-                    className="w-full h-64 object-cover"
+                    className="w-full h-40 object-cover"
                   />
-                  <div className="p-4">
-                    <h2 className="text-xl font-bold mb-2">{product.name}</h2>
+                  <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-0 transition-opacity duration-300 hover:bg-opacity-30">
+                    <span className="text-white text-lg font-semibold opacity-0 transition-opacity duration-300 hover:opacity-100">
+                      자세히 보기
+                    </span>
                   </div>
+                </div>
+                <div className="p-4">
+                  <h2 className="text-lg font-semibold mb-2">{product.name}</h2>
                 </div>
               </Link>
             ))}

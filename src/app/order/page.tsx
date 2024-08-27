@@ -44,7 +44,7 @@ export default function OrderPage() {
         주문제작 하러가기
       </h1>
       <section className="mb-16">
-        <h2 className="text-2xl font-bold mb-4">주문제작 과정</h2>
+        <h2 className="text-2xl font-bold mb-4 text-brand">주문제작 과정</h2>
         <ol className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-5 gap-8">
           {processes.map((process, index) => (
             <li

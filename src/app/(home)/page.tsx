@@ -21,7 +21,7 @@ export default function Home() {
         <div className="flex flex-col md:flex-row items-center">
           <div className="md:w-1/2 md:pr-8 mb-8 md:mb-0">
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
-              여러분들의 아이디어가 세상에 나오게 하는 일, 우리가 함께 합니다.
+              여러분들의 아이디어가 세상에 나오게 하는 일,우리가 함께 합니다.
             </h1>
             <p className="text-lg md:text-xl lg:text-2xl mb-8">
               JUST MAKE IT - 아크릴 주문 제작의 시작과 끝.
@@ -276,7 +276,7 @@ export default function Home() {
       {/* 회사 스토리 섹션 */}
       <section className="bg-brand text-white py-16 mb-16">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-8">
+          <h2 className="text-2xl font-bold mb-8">
             우리는 어떻게 시작했을까요?
           </h2>
           <p className="mb-8">
@@ -299,16 +299,16 @@ export default function Home() {
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-4">지금 시작하세요!</h2>
           <p className="text-xl mb-8">아이디어를 현실로, JUST MAKE IT.</p>
-          <div className="flex justify-center space-x-4">
+          <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
             <Link
               href="/order"
-              className="bg-brand text-white px-8 py-3 rounded-full text-lg"
+              className="bg-brand text-white px-4 sm:px-6 md:px-8 py-2 sm:py-3 rounded-full text-sm sm:text-base md:text-lg lg:text-xl text-center"
             >
               지금 주문 제작하기
             </Link>
             <Link
               href="/contact"
-              className="bg-white text-brand px-8 py-3 rounded-full text-lg"
+              className="bg-white text-brand px-4 sm:px-6 md:px-8 py-2 sm:py-3 rounded-full text-sm sm:text-base md:text-lg lg:text-xl text-center"
             >
               협업 문의하기
             </Link>

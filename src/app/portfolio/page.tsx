@@ -15,27 +15,36 @@ export const metadata: Metadata = {
 export default function PortfolioMain() {
   return (
     <main className="container mx-auto py-12">
-      <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8">
+      <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8 px-4">
         아크릴 주문제작 포트폴리오
       </h1>
 
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {portfolioData.length === 0
           ? Array.from({ length: 6 }).map((_, index) => (
               <SkeletonCategoryCard key={index} />
             ))
           : portfolioData.map((category) => (
-              <Link key={category.id} href={`/portfolio/${category.id}`}>
-                <div className="bg-gray-100 p-6 rounded shadow transition-all duration-300 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-brand">
+              <Link
+                key={category.id}
+                href={`/portfolio/${category.id}`}
+                className="bg-white p-4 rounded-lg shadow-md transition-all duration-300 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-brand"
+              >
+                <div className="relative">
                   <Image
                     src={category.thumbnailUrl}
                     alt={category.name}
                     width={300}
                     height={300}
-                    className="w-full h-56 object-cover mb-4 rounded"
+                    className="w-full h-40 object-cover mb-4 rounded-lg"
                   />
-                  <h2 className="text-xl font-bold mb-2">{category.name}</h2>
+                  <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-0 transition-opacity duration-300 hover:bg-opacity-30 rounded-lg">
+                    <span className="text-white text-lg font-semibold opacity-0 transition-opacity duration-300 hover:opacity-100">
+                      자세히 보기
+                    </span>
+                  </div>
                 </div>
+                <h2 className="text-lg font-semibold mb-2">{category.name}</h2>
               </Link>
             ))}
       </div>

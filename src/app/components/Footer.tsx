@@ -6,8 +6,8 @@ export default function Footer() {
   return (
     <footer className="bg-gray-800 text-white py-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div>
+        <div className="flex flex-col md:flex-row md:justify-between">
+          <div className="mb-8 md:mb-0">
             <h3 className="text-xl font-bold mb-4">아크릴맛집</h3>
             <p>아크릴을 맛있게 만들어드립니다.</p>
             <p className="mt-4">
@@ -22,37 +22,7 @@ export default function Footer() {
               email: official.uone@gmail.com
             </p>
           </div>
-          <div>
-            <h3 className="text-xl font-bold mb-4">Quick Links</h3>
-            <ul>
-              <li>
-                <Link href="/" className="hover:text-brand">
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link href="/portfolio" className="hover:text-brand">
-                  Portfolio
-                </Link>
-              </li>
-              <li>
-                <Link href="/order" className="hover:text-brand">
-                  주문제작 하러가기
-                </Link>
-              </li>
-              <li>
-                <Link href="/class" className="hover:text-brand">
-                  아클
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact" className="hover:text-brand">
-                  Contact
-                </Link>
-              </li>
-            </ul>
-          </div>
-          <div>
+          <div className="flex flex-col items-start md:items-end">
             <h3 className="text-xl font-bold mb-4">Follow Us</h3>
             <ul className="flex space-x-4">
               <li>
