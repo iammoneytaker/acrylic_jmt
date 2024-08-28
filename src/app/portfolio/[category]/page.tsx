@@ -51,11 +51,11 @@ export default function PortfolioCategory({
         <IoIosArrowBack className="text-2xl mr-2 text-brand" />
         <span>포트폴리오로 돌아가기</span>
       </Link>
-      <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8">
+      <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8 px-4">
         {category.name}
       </h1>
 
-      <div className="grid grid-cols-2 gap-6">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {sortedProducts.length === 0
           ? Array.from({ length: 6 }).map((_, index) => (
               <SkeletonProductCard key={index} />
