@@ -44,6 +44,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://acrylic-jmt.vercel.app',
   },
+  other: {
+    'naver-site-verification': '9118decf336d6a924c606148166d4fda23478bf0',
+  },
 };
 
 export default function RootLayout({
