@@ -68,10 +68,11 @@ export default function PortfolioCategory({
               >
                 <div className="relative">
                   <Image
-                    src={`/images/portfolio/${category.id}/${product.no}/thumbnail.png`}
+                    src={`/images/portfolio-compressed/${category.id}/${product.no}/thumbnail.webp`}
                     alt={product.name}
                     width={500}
                     height={500}
+                    quality={80}
                     className="w-full h-40 object-cover"
                   />
                   <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-0 transition-opacity duration-300 hover:bg-opacity-30">

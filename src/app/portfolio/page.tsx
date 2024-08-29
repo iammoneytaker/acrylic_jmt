@@ -32,10 +32,11 @@ export default function PortfolioMain() {
               >
                 <div className="relative">
                   <Image
-                    src={category.thumbnailUrl}
+                    src={`/images/portfolio-compressed/${category.id}/thumbnail.webp`}
                     alt={category.name}
                     width={300}
                     height={300}
+                    quality={80}
                     className="w-full h-40 object-cover mb-4 rounded-lg"
                   />
                   <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-0 transition-opacity duration-300 hover:bg-opacity-30 rounded-lg">

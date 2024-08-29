@@ -28,14 +28,14 @@ async function getExistingImagePaths(category: string, productNo: string) {
     process.cwd(),
     'public',
     'images',
-    'portfolio',
+    'portfolio-compressed',
     category,
     productNo
   );
   const imagePaths = [];
 
   for (let i = 1; i <= 10; i++) {
-    const imagePath = `/images/portfolio/${category}/${productNo}/${i}.png`;
+    const imagePath = `/images/portfolio-compressed/${category}/${productNo}/${i}.webp`;
     try {
       await fs.access(path.join(process.cwd(), 'public', imagePath));
       imagePaths.push(imagePath);

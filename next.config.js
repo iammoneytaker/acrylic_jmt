@@ -6,6 +6,7 @@ const nextConfig = {
     domains: ['www.acrylic-jmt.co.kr'],
     path: '/_next/image',
     loader: 'default',
+    formats: ['image/webp'],
   },
 };
 
