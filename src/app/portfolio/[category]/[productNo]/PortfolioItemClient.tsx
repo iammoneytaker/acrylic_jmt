@@ -23,7 +23,7 @@ export default function PortfolioItemClient({
 }: PortfolioItemClientProps) {
   if (!product) {
     return (
-      <div className="container mx-auto py-12">
+      <div className="container mx-auto py-12 px-4">
         <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8">
           제품을 찾을 수 없습니다
         </h1>
@@ -38,7 +38,7 @@ export default function PortfolioItemClient({
   }
 
   return (
-    <main className="container mx-auto py-12">
+    <main className="container mx-auto py-12 px-4">
       <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8">
         {product.name}
       </h1>
@@ -64,7 +64,7 @@ export default function PortfolioItemClient({
           ))}
         </div>
       </div>
-      <p className="text-lg mb-8">{product.description}</p>
+      <p className="text-lg mb-8 text-justify">{product.description}</p>
     </main>
   );
 }

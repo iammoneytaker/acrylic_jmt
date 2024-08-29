@@ -19,7 +19,7 @@ export default function PortfolioMain() {
         아크릴 주문제작 포트폴리오
       </h1>
 
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 px-4">
         {portfolioData.length === 0
           ? Array.from({ length: 6 }).map((_, index) => (
               <SkeletonCategoryCard key={index} />
