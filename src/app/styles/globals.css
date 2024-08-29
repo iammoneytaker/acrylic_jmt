@@ -1,3 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.style-engraved {
+  text-shadow: -1px -1px 1px #ffffff, 1px 1px 1px rgba(255, 6, 6, 0.3),
+    -1px 1px 1px #ff0404, 1px -1px 1px #ff0d0d;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-image: linear-gradient(to bottom, #ea3030, #df1919);
+}

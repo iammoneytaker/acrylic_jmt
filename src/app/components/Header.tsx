@@ -1,5 +1,4 @@
 'use client';
-// src/components/Header.jsx
 import { useState } from 'react';
 import Link from 'next/link';
 import { FaBars, FaTimes } from 'react-icons/fa';
@@ -30,6 +29,17 @@ export default function Header() {
               />
             </Link>
           </div>
+
+          {/* 모바일에서만 보이는 슬로건 */}
+          <div className="md:hidden flex items-center">
+            <div className="relative">
+              <span className="text-lg font-extrabold text-brand style-engraved">
+                JUST MAKE IT
+              </span>
+              <div className="absolute -bottom-1 left-0 w-full h-0.5 bg-brand"></div>
+            </div>
+          </div>
+
           <div className="hidden md:flex space-x-8">
             <Link href="/" className="text-gray-700 hover:text-brand">
               Home
@@ -46,10 +56,7 @@ export default function Header() {
             <Link href="/about" className="text-gray-700 hover:text-brand">
               About
             </Link>
-            <Link
-              href="/contact"
-              className="block text-gray-700 hover:text-brand"
-            >
+            <Link href="/contact" className="text-gray-700 hover:text-brand">
               Contact
             </Link>
           </div>
