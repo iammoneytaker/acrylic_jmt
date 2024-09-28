@@ -17,7 +17,7 @@ export default function ACLClassPage() {
     <div className="bg-white">
       <header className="bg-brand text-white py-20 text-center">
         <h1 className="text-4xl md:text-5xl font-bold mb-4">
-          아클(아크릴 클래스)
+          아클(아크릴 클래스) 4기 모집
         </h1>
         <p className="text-xl md:text-2xl px-4">
           3주간의 일정 후, 인생에서 아크릴을 몰라서 손해보는 일은 없을겁니다.
@@ -68,11 +68,10 @@ export default function ACLClassPage() {
           <h2 className="text-3xl font-bold mb-6">수업 일정(3기)</h2>
           <div className="bg-gray-100 p-6 rounded-lg">
             <p className="text-lg mb-2">
-              <strong>시작일:</strong> 2024년 9월 21일(토요일)
+              <strong>시작일:</strong> 2024년 10월 5일(토요일)
             </p>
             <p className="text-lg mb-2">
-              <strong>시간:</strong> 토요일 오후 3시 (약 5시간, 3주 총 15시간),
-              일요일 오전 10시
+              <strong>시간:</strong> 토요일 오후 3시 (약 5시간, 3주 총 15시간)
             </p>
             <p className="text-lg">
               <strong>장소:</strong> 을지로아크릴서울스튜디오
@@ -101,7 +100,7 @@ export default function ACLClassPage() {
 
         <section className="text-center">
           <Link
-            href="https://naver.me/xk1qABBG"
+            href="https://naver.me/5ISQsh72"
             className="bg-brand text-white text-xl font-bold py-4 px-8 rounded-full inline-block hover:bg-opacity-90 transition duration-300"
           >
             수강 신청하기
