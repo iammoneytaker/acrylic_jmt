@@ -53,7 +53,7 @@ export default function PortfolioMain() {
                 <Link
                   key={category.id}
                   href={`/portfolio/${category.id}`}
-                  className="bg-white p-4 rounded-lg shadow-md transition-all duration-300 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-brand"
+                  className="bg-white p-4 rounded-lg shadow-md transition-all duration-300 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-brand relative"
                 >
                   <div className="relative">
                     <Image
@@ -73,6 +73,9 @@ export default function PortfolioMain() {
                   <h2 className="text-lg font-semibold mb-2">
                     {category.name}
                   </h2>
+                  <span className="absolute bottom-2 right-2 text-brand text-sm font-semibold">
+                    Click
+                  </span>
                 </Link>
               ))}
         </div>

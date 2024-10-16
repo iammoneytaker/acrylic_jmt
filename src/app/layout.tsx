@@ -11,7 +11,7 @@ const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: {
-    template: '%s | 아크릴맛집',
+    template: '아크릴맛집 | %s',
     default: '아크릴맛집',
   },
   description:
