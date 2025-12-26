@@ -7,7 +7,7 @@ export default function ContactPage() {
   );
 
   const handleEmailClick = () => {
-    window.location.href = `mailto:official.uone@gmail.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:acryl.jmt@gmail.com?subject=${subject}&body=${body}`;
   };
 
   return (

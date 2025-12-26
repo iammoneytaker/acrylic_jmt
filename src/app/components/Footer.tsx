@@ -17,9 +17,9 @@ export default function Footer() {
               <br />
               사업자등록번호: 382-75-00268
               <br />
-              주소: 서울특별시 중구 을지로33길 33, 청자빌딩 201호
+              주소: 서울특별시 중구 을지로33길 31,명신빌딩 101호
               <br />
-              email: official.uone@gmail.com
+              email: acryl.jmt@gmail.com
             </p>
           </div>
           <div className="flex flex-col items-start md:items-end">
